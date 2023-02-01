@@ -841,7 +841,8 @@
 
 //#define SENSORLESS_BACKOFF_MM  { 2, 2, 0 }  // (mm) Backoff from endstops before sensorless homing
 
-#define HOMING_BUMP_MM      { 5, 5, 2 }       // (mm) Backoff from endstops after first bump
+#define HOMING_BUMP_MM      { 10, 10, 4 }       // (mm) Backoff from endstops after first bump
+//tobechanged Need higher numbers for bigger printers due to belt slack
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 
 //#define HOMING_BACKOFF_POST_MM { 2, 2, 2 }  // (mm) Backoff from endstops after homing
@@ -2202,8 +2203,10 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-#define MINIMUM_STEPPER_POST_DIR_DELAY 200
-#define MINIMUM_STEPPER_PRE_DIR_DELAY 200
+
+// Units to be ns
+#define MINIMUM_STEPPER_POST_DIR_DELAY 5000
+#define MINIMUM_STEPPER_PRE_DIR_DELAY 5000
 //tobechanged
 
 /**
@@ -2217,7 +2220,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-#define MINIMUM_STEPPER_PULSE 4 
+#define MINIMUM_STEPPER_PULSE 5 
 //tobechanged
 /**
  * Maximum stepping rate (in Hz) the stepper driver allows
@@ -2231,7 +2234,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-#define MAXIMUM_STEPPER_RATE 500000
+#define MAXIMUM_STEPPER_RATE 100000
 //tobechanged
 // @section temperature
 
